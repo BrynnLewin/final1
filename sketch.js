@@ -85,8 +85,7 @@ function draw() {
       
     case 1:
         image(street, 1, 10);
-      camera.position.x = starsprite.position.x;
-      camera.position.y = starsprite.position.y;
+    
 
       startBsprite.visible = false;
       starsprite.visible = true;
@@ -110,4 +109,5 @@ function draw() {
       // Code for Stage 2
       break;
   }
+  camera.y = starsprite.y;
 }
