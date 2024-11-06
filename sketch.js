@@ -37,13 +37,13 @@ function preload() {
   start = loadImage('assets/start.png');
   startB = loadImage('assets/startb.png');
   street = loadImage('assets/street.jpg');
-  star = loadImage('assets/star.jpg');
+  star = loadImage('assets/star.png');
   //sounds
 }
 
 function setup() {
-  createCanvas(); 
-  displayMode("fullscreen");
+  createCanvas(windowWidth, windowHeight); 
+  fullscreen(true);
 
 
   startBsprite = new Sprite();
@@ -61,40 +61,48 @@ function setup() {
 
   //image(start);
 
-  allSprites.autoDraw = false;
+  //allSprites.autoDraw = false;
+ //starsprite.hide();
+
+
 }
 
 function draw() {
-  //clear();
    background("black");
 
   switch (stage) {
     case 0:
 	   image(start, 400, 100);
 
-	   startBsprite.draw();
+	   startBsprite.visible = true;
+	   starsprite.visible = false;
 	   
-	   if (startBsprite.mouse.pressing()) {
+	   if (startBsprite.mouse.presses()) {
 		 print("Start button is pressed.");
 		 stage = 1; // Move to case 1
 	   }
       break;
       
     case 1:
-      image(street, 500,500);
+        image(street, 1, 10);
+      camera.position.x = starsprite.position.x;
+      camera.position.y = starsprite.position.y;
 
-	  star.draw()
+      startBsprite.visible = false;
+      starsprite.visible = true;
+
+	  starsprite.draw()
 	  if (keyIsDown(LEFT_ARROW)) {
-		star.x -= 5; 
+		starsprite.x -= 5; 
 	  }
 	  if (keyIsDown(RIGHT_ARROW)) {
-		star.x += 5; 
+		starsprite.x += 5; 
 	  }
 	  if (keyIsDown(UP_ARROW)) {
-		star.y -= 5; 
+		starsprite.y -= 5; 
 	  }
 	  if (keyIsDown(DOWN_ARROW)) {
-		star.y += 5; 
+		starsprite.y += 5; 
 	  }
       break;
       
