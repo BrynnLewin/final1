@@ -2,8 +2,10 @@
 //scenes
 let start;
 let startB;
+let startBsprite;
 let street;
 let star;
+let starsprite;
 let stage = 0;
 let sit1;
 let sit2;
@@ -31,46 +33,55 @@ let cup;
 
 
 function preload() {
-  start = loadImage('assets/start.jpg');
-  startBImage = loadImage('assets/startB.jpg');
+	//images 
+  start = loadImage('assets/start.png');
+  startB = loadImage('assets/startb.png');
   street = loadImage('assets/street.jpg');
   star = loadImage('assets/star.jpg');
+  //sounds
 }
 
 function setup() {
-  createCanvas(500, 500); 
+  createCanvas(); 
+  displayMode("fullscreen");
 
 
-  startB = new Sprite();
-  startB.diameter = 100;
-  startB.x = width / 2;
-  startB.y = height / 2;
+  startBsprite = new Sprite();
+  startBsprite.diameter = 100;
+  startBsprite.x = 750;
+  startBsprite.y = 600;
+  startBsprite.image = startB;
 
-  star = new Sprite();
-  star.diameter = 100;
-  star.x = width / 2;
-  star.y = height / 2;
+  starsprite = new Sprite();
+  starsprite.diameter = 100;
+  starsprite.x = width / 2;
+  starsprite.y = height / 2;
+  starsprite.image = star;
+
 
   //image(start);
+
+  allSprites.autoDraw = false;
 }
 
 function draw() {
-  clear();
+  //clear();
+   background("black");
 
   switch (stage) {
     case 0:
-	   image("start", 0, 0);
+	   image(start, 400, 100);
 
-	   startB.draw();
+	   startBsprite.draw();
 	   
-	   if (startB.pressing() && startB.mouse.overlapping) {
+	   if (startBsprite.mouse.pressing()) {
 		 print("Start button is pressed.");
 		 stage = 1; // Move to case 1
 	   }
       break;
       
     case 1:
-      image("street", 500,500);
+      image(street, 500,500);
 
 	  star.draw()
 	  if (keyIsDown(LEFT_ARROW)) {
