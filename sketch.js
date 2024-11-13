@@ -73,7 +73,7 @@ function setup() {
   startBsprite = new Sprite();
   startBsprite.diameter = 50;
   startBsprite.x = 350;
-  startBsprite.y = 400;
+  startBsprite.y = 455;
   startBsprite.image = startB;
   startBsprite.collider = "kinematic";
 
@@ -84,6 +84,30 @@ function setup() {
   starsprite.y = 450;
   starsprite.image = star;
   starsprite.collider = "kinematic";
+
+  drinksprite = new Sprite();
+  drinksprite.scale = .9;
+  drinksprite.diameter = 50;
+  drinksprite.x = 80;
+  drinksprite.y = 350;
+  drinksprite.image = drink;
+  drinksprite.collider = "kinematic";
+
+  carsprite = new Sprite;
+  carsprite.scale = 1;
+  carsprite.diameter = 50;
+  carsprite.x = 350;
+  carsprite.y = 180;
+  carsprite.image = car;
+  carsprite.collider = "kinematic";
+
+  shadowsprite = new Sprite;
+  shadowsprite.scale = 1;
+  shadowsprite.diameter = 50;
+  shadowsprite.x = 450;
+  shadowsprite.y = 25;
+  shadowsprite.image = shadow;
+  shadowsprite.collider = "kinematic";
 
 
   //image(start);
@@ -104,6 +128,9 @@ function draw() {
 	   startBsprite.visible = true;
 	   starsprite.visible = false;
 	   streetsprite.visible = false;
+	   drinksprite.visible = false;
+	   carsprite.visible = false;
+	   shadowsprite.visible = false;
 	   
 	   if (startBsprite.mouse.presses()) {
 		 print("Start button is pressed.");
@@ -116,18 +143,29 @@ function draw() {
       startBsprite.visible = false;
       starsprite.visible = true;
 	  streetsprite.visible = true;
+	  drinksprite.visible = true;
+	  carsprite.visible = true;
+	  shadowsprite.visible = true;
 
 	  streetsprite.draw(0,200);
 	  
 	  starsprite.draw();
 
+	  drinksprite.draw(80, 350);
+
 	  //streetsprite.draw();
 	  if (keyIsDown(UP_ARROW) && streetsprite.y < 660) {
-		streetsprite.y += 5; 
+		streetsprite.y += 2; 
+		drinksprite.y += 2; 
+		carsprite.y += 2;
+		shadowsprite += 2;
 		console.log(streetsprite.y)
 	  }
 	  if (keyIsDown(DOWN_ARROW) && streetsprite.y > 0) {
 		streetsprite.y -= 5; 
+		drinksprite.y -= 2; 
+		carsprite.y -= 2;
+		shadowsprite -= 2;
 	  }
 	
       break;
