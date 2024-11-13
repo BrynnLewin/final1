@@ -66,20 +66,24 @@ function setup() {
   streetsprite = new Sprite();
   streetsprite.diameter = 100;
   streetsprite.x = 300;
-  streetsprite.y = 550;
+  streetsprite.y = 10;
   streetsprite.image = street;
+  streetsprite.collider = "kinematic";
 
   startBsprite = new Sprite();
-  startBsprite.diameter = 100;
+  startBsprite.diameter = 50;
   startBsprite.x = 350;
   startBsprite.y = 400;
   startBsprite.image = startB;
+  startBsprite.collider = "kinematic";
 
   starsprite = new Sprite();
-  starsprite.diameter = 50;
+  starsprite.scale = .7;
+  starsprite.diameter = 10;
   starsprite.x = 300;
-  starsprite.y = 400;
+  starsprite.y = 450;
   starsprite.image = star;
+  starsprite.collider = "kinematic";
 
 
   //image(start);
@@ -115,7 +119,7 @@ function draw() {
 
 	  streetsprite.draw(0,200);
 	  
-	  starsprite.draw(300,250,10,10,5,5);
+	  starsprite.draw();
 
 	  //streetsprite.draw();
 	  if (keyIsDown(UP_ARROW) && streetsprite.y < 660) {
