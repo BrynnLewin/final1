@@ -17,6 +17,8 @@ let keysprite;
 let shadow;
 let shadowsprite;
 let carsprite;
+let next;
+let nextsprite;
 
 let stage = 0;
 let sit1;
@@ -55,6 +57,7 @@ function preload() {
   drink = loadImage('assets/drink.png');
   key = loadImage('assets/key.png');
   shadow = loadImage('assets/shadow.png');
+  next = loadImage('assets/next.png');
   //sounds
 }
 
@@ -69,6 +72,13 @@ function setup() {
   streetsprite.y = 10;
   streetsprite.image = street;
   streetsprite.collider = "kinematic";
+
+  nextsprite = new Sprite;
+  nextsprite.diameter = 100;
+  nextsprite.x = 300;
+  nextsprite.y = 400;
+  nextsprite.image = next;
+  nextsprite.collider = "kinematic";
 
   startBsprite = new Sprite();
   startBsprite.diameter = 50;
@@ -109,12 +119,21 @@ function setup() {
   shadowsprite.image = shadow;
   shadowsprite.collider = "kinematic";
 
+  couchsprite = new Sprite;
+  couchsprite.scale = 1;
+  couchsprite.diameter = 50;
+  couchsprite.x = 105;
+  couchsprite.y = -100;
+  couchsprite.image = couch;
+  couchsprite.collider = "kinematic";
 
-  //image(start);
-
-  //allSprites.autoDraw = false;
- //starsprite.hide();
-
+  keysprite = new Sprite;
+  keysprite.scale = 1;
+  keysprite.diameter = 50;
+  keysprite.x = 420;
+  keysprite.y = -200;
+  keysprite.image = key;
+  keysprite.collider = "kinematic";
 
 }
 
@@ -126,26 +145,57 @@ function draw() {
 	   image(start, 30, 10, 500, 500);
 
 	   startBsprite.visible = true;
+	   nextsprite.visible = false;
 	   starsprite.visible = false;
 	   streetsprite.visible = false;
 	   drinksprite.visible = false;
 	   carsprite.visible = false;
 	   shadowsprite.visible = false;
+	   couchsprite.visible = false;
+	   keysprite.visible = false;
+
 	   
 	   if (startBsprite.mouse.presses()) {
 		 print("Start button is pressed.");
 		 stage = 1; // Move to case 1
 	   }
       break;
-      
-    case 1:
+
+	  case 1:
+
+		startBsprite.visible = false;
+	   nextsprite.visible = true;
+	   starsprite.visible = false;
+	   streetsprite.visible = false;
+	   drinksprite.visible = false;
+	   carsprite.visible = false;
+	   shadowsprite.visible = false;
+	   couchsprite.visible = false;
+	   keysprite.visible = false;
+
+	   text("After a night out with some friends, you decide to walk home from the club alone.", 50,50,50);
+	   text("You must choose your actions wisely in order to make it home safely.", 50, 85,50);
+	   text("Use keys “a,b, and c” to make decisions and the up arrow key to move around.", 50, 150, 50);
+	   text("Good luck surviving the walk home.", 50, 200, 50);
+	   fill("white");
+	   if (nextsprite.mouse.presses()) {
+		print("next button is pressed.");
+		stage = 2; // Move to case 2
+	   }
+		break;
+
+
+    case 2:
 	
       startBsprite.visible = false;
       starsprite.visible = true;
+	  nextsprite.visible = false;
 	  streetsprite.visible = true;
 	  drinksprite.visible = true;
 	  carsprite.visible = true;
 	  shadowsprite.visible = true;
+	  couchsprite.visible = true;
+	  keysprite.visible = true;
 
 	  streetsprite.draw(0,200);
 	  
@@ -158,20 +208,26 @@ function draw() {
 		streetsprite.y += 2; 
 		drinksprite.y += 2; 
 		carsprite.y += 2;
-		shadowsprite += 2;
+		shadowsprite.y += 2;
+		couchsprite.y += 2;
+		keysprite.y += 2;
+
 		console.log(streetsprite.y)
 	  }
 	  if (keyIsDown(DOWN_ARROW) && streetsprite.y > 0) {
-		streetsprite.y -= 5; 
+		streetsprite.y -= 2; 
 		drinksprite.y -= 2; 
 		carsprite.y -= 2;
-		shadowsprite -= 2;
+		shadowsprite.y -= 2;
+		couchsprite.y -= 2;
+		keysprite.y -= 2;
 	  }
 	
       break;
       
-    case 2:
-      // Code for Stage 2
+    case 3:
+      text("As you are leaving the club, three drunk men standing outside ask for you to post game at their apartment", 50, 50, 50);
+	  
       break;
   }
  // camera.y = streetsprite.y;
