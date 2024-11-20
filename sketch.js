@@ -239,7 +239,7 @@ function draw() {
 
 			text("After a night out with some friends, you decide to walk home from the club alone.", 50, 50, 50);
 			text("You must choose your actions wisely in order to make it home safely.", 50, 85, 50);
-			text("Use keys “a,b, and c” to make decisions and the up arrow key to move around.", 50, 150, 50);
+			text("Click “a,b, and c” to make decisions and the up arrow key to move around.", 50, 150, 50);
 			text("Good luck surviving the walk home.", 50, 200, 50);
 			fill("white");
 			if (nextsprite.mouse.presses()) {
