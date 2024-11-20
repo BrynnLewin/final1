@@ -27,6 +27,8 @@ let b;
 let bsprite;
 let c;
 let csprite;
+let play;
+let playsprite;
 
 let stage = 0;
 let sit1;
@@ -56,6 +58,7 @@ function preload() {
 	a = loadImage('assets/a.png');
 	b = loadImage('assets/b.png');
 	c = loadImage('assets/c.png');
+	play = loadImage('assets/play.png');
 	//sounds
 }
 
@@ -164,6 +167,14 @@ function setup() {
 	csprite.image = c;
 	csprite.collider = "kinematic";
 
+	playsprite = new Sprite;
+	playsprite.scale = .5;
+	playsprite.diameter = 100;
+	playsprite.x = 300;
+	playsprite.y = 400;
+	playsprite.image = play;
+	playsprite.collider = "kinematic";
+
 }
 
 function draw() {
@@ -186,6 +197,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			streetsprite.x = 300;
 			streetsprite.y = 10;
@@ -214,6 +226,9 @@ function draw() {
 			keysprite.x = 420;
 			keysprite.y = -200;
 
+			playsprite.x = 300;
+			playsprite.y = 400;
+
 
 			if (startBsprite.mouse.presses()) {
 				print("Start button is pressed.");
@@ -236,6 +251,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("After a night out with some friends, you decide to walk home from the club alone.", 50, 50, 50);
 			text("You must choose your actions wisely in order to make it home safely.", 50, 85, 50);
@@ -264,6 +280,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 
 			streetsprite.draw(0, 200);
@@ -338,6 +355,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = true;
+			playsprite.visible = false;
 
 
 			text("As you are leaving the club, three drunk men standing outside ask for you to post game at their apartment", 50, 50, 50);
@@ -377,6 +395,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("They leave you alone, you keep walking home", 50, 50, 50);
 			if (nextsprite.mouse.presses()) {
@@ -400,6 +419,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("They call you a liar and a tease, you keep walking home", 50, 50, 50);
 
@@ -423,6 +443,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("GAME OVER, they expected more than just a post game…", 50, 50, 50);
 
@@ -446,6 +467,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = true;
+			playsprite.visible = false;
 
 
 			text("A car revs its engine and then slows down next to you, A man yells out the window to cat call you", 50, 50, 50);
@@ -484,6 +506,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He gets mad and throws a solo cup at you then drives off", 50, 50, 50);
 
@@ -507,6 +530,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He drives off", 50, 50, 50);
 
@@ -530,6 +554,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He yells “fine, you’re ugly anyways!” and drives off", 50, 50, 50);
 
@@ -553,6 +578,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = true;
+			playsprite.visible = false;
 
 
 			text("As you continue to walk, you feel someone following closely behind you", 50, 50, 50);
@@ -590,6 +616,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 
 			text("The man begins to walk faster to catch up with you", 50, 50, 50);
@@ -622,6 +649,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("the man doesn’t follow you across the street and leaves you alone", 50, 50, 50);
 
@@ -645,6 +673,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("GAME OVER, You just pepper sprayed an innocent old woman walking her dog behind you…", 50, 50, 50);
 
@@ -668,6 +697,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("You scare him off ", 50, 50, 50);
 
@@ -691,6 +721,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("GAME OVER, he attacks you…", 50, 50, 50);
 
@@ -714,6 +745,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = true;
+			playsprite.visible = false;
 
 
 			text("An old man with a limp and a cast is trying to load an old couch into the back of a van, he asks you for help", 50, 50, 50);
@@ -751,6 +783,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He continues loading the couch without you", 50, 50, 50);
 
@@ -774,6 +807,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("GAME OVER, he was inspired by Ted Bundy and abducts you…", 50, 50, 50);
 
@@ -797,6 +831,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He calls you a bitch and continure to load the couch without you", 50, 50, 50);
 
@@ -820,6 +855,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = true;
+			playsprite.visible = false;
 
 
 			text("You’re at the door of your apartment building looking for your key fob in your purse. A man around your age approaches you and says “I forgot my fob, can you open the door for me please?", 40, 50, 50);
@@ -857,6 +893,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("GAME OVER, he lied about living in the building a followed you to your unit…", 50, 50, 50);
 
@@ -880,6 +917,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He gets frustrated and continues to wait outside the building", 50, 50, 50);
 
@@ -903,6 +941,7 @@ function draw() {
 			asprite.visible = true;
 			bsprite.visible = true;
 			csprite.visible = true;
+			playsprite.visible = false;
 
 
 			text("He responds with your close friend’s apartment number so you know he's lying", 50, 50, 50);
@@ -940,6 +979,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He groans and walks away", 50, 50, 50);
 
@@ -963,6 +1003,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("He groans and walks away", 50, 50, 50);
 
@@ -986,6 +1027,7 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = false;
 
 			text("GAME OVER, he follows you to your unit…", 50, 50, 50);
 
@@ -1009,8 +1051,14 @@ function draw() {
 			asprite.visible = false;
 			bsprite.visible = false;
 			csprite.visible = false;
+			playsprite.visible = true;
 
 			text("Congratulations, you made it home safely… this time", 50, 50, 50);
+
+			if (playsprite.mouse.presses()) {
+				print("play is pressed.");
+				stage = 0;
+			}
 			break;
 
 	}
