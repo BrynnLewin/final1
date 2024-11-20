@@ -38,20 +38,6 @@ let sit5;
 let sit5a;
 let gameover;
 
-//sounds
-let intro;
-let night;
-let club;
-let murmer;
-let end;
-let cars;
-let angry;
-let yelling;
-let grunt;
-let footsteps;
-let rev;
-let woman;
-let cup;
 
 
 function preload() {
@@ -201,6 +187,33 @@ function draw() {
 			bsprite.visible = false;
 			csprite.visible = false;
 
+			streetsprite.x = 300;
+			streetsprite.y = 10;
+
+			startBsprite.x = 350;
+			startBsprite.y = 455;
+
+			starsprite.x = 300;
+			starsprite.y = 450;
+
+			nextsprite.x = 300;
+			nextsprite.y = 400;
+
+			drinksprite.x = 80;
+			drinksprite.y = 350;
+
+			carsprite.x = 350;
+			carsprite.y = 180;
+
+			shadowsprite.x = 450;
+			shadowsprite.y = 25;
+
+			couchsprite.x = 105;
+			couchsprite.y = -100;
+
+			keysprite.x = 420;
+			keysprite.y = -200;
+
 
 			if (startBsprite.mouse.presses()) {
 				print("Start button is pressed.");
@@ -286,6 +299,26 @@ function draw() {
 				stage = 3;
 			}
 
+			if (carsprite.mouse.presses()) {
+				print("car is pressed.");
+				stage = 7;
+			}
+
+			if (shadowsprite.mouse.presses()) {
+				print("shadow is pressed.");
+				stage = 11;
+			}
+
+			if (couchsprite.mouse.presses()) {
+				print("couch is pressed.");
+				stage = 17;
+			}
+
+			if (keysprite.mouse.presses()) {
+				print("key is pressed.");
+				stage = 21;
+			}
+
 			break;
 
 		case 3:
@@ -314,8 +347,19 @@ function draw() {
 
 			if (asprite.mouse.presses()) {
 				print("a is pressed.");
-				stage = 4; 
+				stage = 4;
 			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 5;
+			}
+
+			if (csprite.mouse.presses()) {
+				print("c is pressed.");
+				stage = 6;
+			}
+
 
 			break;
 
@@ -334,25 +378,641 @@ function draw() {
 			bsprite.visible = false;
 			csprite.visible = false;
 
-			text("They leave you alone, you keep walking home", 50,50,50);
+			text("They leave you alone, you keep walking home", 50, 50, 50);
 			if (nextsprite.mouse.presses()) {
 				print("next is pressed.");
-				stage = 2; 
+				stage = 2;
 			}
 
 			break;
 
 		case 5:
-			
-		break;
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("They call you a liar and a tease, you keep walking home", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
 
 		case 6:
-			
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("GAME OVER, they expected more than just a post game…", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 0;
+			}
 			break;
 
 		case 7:
-			
-		break;
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = true;
+			bsprite.visible = true;
+			csprite.visible = true;
+
+
+			text("A car revs its engine and then slows down next to you, A man yells out the window to cat call you", 50, 50, 50);
+			text("Yell back “fuck off”", 100, 110, 50);
+			text("Pretend to be on a call", 100, 200, 50);
+			text("Ignore him and hope he drives off", 100, 300, 50);
+
+			if (asprite.mouse.presses()) {
+				print("a is pressed.");
+				stage = 8;
+			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 9;
+			}
+
+			if (csprite.mouse.presses()) {
+				print("c is pressed.");
+				stage = 10;
+			}
+
+			break;
+
+		case 8:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He gets mad and throws a solo cup at you then drives off", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 9:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He drives off", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 10:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He yells “fine, you’re ugly anyways!” and drives off", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 11:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = true;
+			bsprite.visible = true;
+			csprite.visible = true;
+
+
+			text("As you continue to walk, you feel someone following closely behind you", 50, 50, 50);
+			text("Walk faster", 100, 110, 50);
+			text("Cross the street", 100, 200, 50);
+			text("Turn around and use your pepper spray", 100, 300, 50);
+
+			if (asprite.mouse.presses()) {
+				print("a is pressed.");
+				stage = 12;
+			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 13;
+			}
+
+			if (csprite.mouse.presses()) {
+				print("c is pressed.");
+				stage = 14;
+			}
+			break;
+
+		case 12:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = true;
+			bsprite.visible = true;
+			csprite.visible = false;
+
+
+			text("The man begins to walk faster to catch up with you", 50, 50, 50);
+			text("Use your rape whistle", 100, 110, 50);
+			text("Tell him to stop following you", 100, 200, 50);
+
+
+			if (asprite.mouse.presses()) {
+				print("a is pressed.");
+				stage = 15;
+			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 16;
+			}
+			break;
+
+		case 13:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("the man doesn’t follow you across the street and leaves you alone", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 14:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("GAME OVER, You just pepper sprayed an innocent old woman walking her dog behind you…", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 0;
+			}
+			break;
+
+		case 15:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("You scare him off ", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 16:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("GAME OVER, he attacks you…", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 0;
+			}
+			break;
+
+		case 17:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = true;
+			bsprite.visible = true;
+			csprite.visible = true;
+
+
+			text("An old man with a limp and a cast is trying to load an old couch into the back of a van, he asks you for help", 50, 50, 50);
+			text("Respond “Sorry, I can’t. I’m in a hurry” and walk away", 100, 110, 50);
+			text("Accept and offer to help", 100, 200, 50);
+			text("You pretend not to hear him and continue walking", 100, 300, 50);
+
+			if (asprite.mouse.presses()) {
+				print("a is pressed.");
+				stage = 18;
+			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 19;
+			}
+
+			if (csprite.mouse.presses()) {
+				print("c is pressed.");
+				stage = 20;
+			}
+			break;
+
+		case 18:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He continues loading the couch without you", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 19:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("GAME OVER, he was inspired by Ted Bundy and abducts you…", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 0;
+			}
+			break;
+
+		case 20:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He calls you a bitch and continure to load the couch without you", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 2;
+			}
+			break;
+
+		case 21:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = true;
+			bsprite.visible = true;
+			csprite.visible = true;
+
+
+			text("You’re at the door of your apartment building looking for your key fob in your purse. A man around your age approaches you and says “I forgot my fob, can you open the door for me please?", 40, 50, 50);
+			text("He looks trusting so you let him in the building", 100, 110, 50);
+			text("Tell him no and shut the door behind you", 100, 200, 50);
+			text("Ask him his apartment number for proof", 100, 300, 50);
+
+			if (asprite.mouse.presses()) {
+				print("a is pressed.");
+				stage = 22;
+			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 23;
+			}
+
+			if (csprite.mouse.presses()) {
+				print("c is pressed.");
+				stage = 24;
+			}
+			break;
+
+		case 22:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("GAME OVER, he lied about living in the building a followed you to your unit…", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 0;
+			}
+			break;
+
+		case 23:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He gets frustrated and continues to wait outside the building", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 28;
+			}
+			break;
+
+		case 24:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = true;
+			bsprite.visible = true;
+			csprite.visible = true;
+
+
+			text("He responds with your close friend’s apartment number so you know he's lying", 50, 50, 50);
+			text("Call him out", 100, 110, 50);
+			text("Tell him no and shut the door behind you", 100, 200, 50);
+			text("Hesitate but let him in out of fear of confrontation", 100, 300, 50);
+
+			if (asprite.mouse.presses()) {
+				print("a is pressed.");
+				stage = 25;
+			}
+
+			if (bsprite.mouse.presses()) {
+				print("b is pressed.");
+				stage = 26;
+			}
+
+			if (csprite.mouse.presses()) {
+				print("c is pressed.");
+				stage = 27;
+			}
+			break;
+
+		case 25:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He groans and walks away", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 28;
+			}
+			break;
+
+		case 26:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("He groans and walks away", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 28;
+			}
+			break;
+
+		case 27:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = true;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("GAME OVER, he follows you to your unit…", 50, 50, 50);
+
+			if (nextsprite.mouse.presses()) {
+				print("next is pressed.");
+				stage = 0;
+			}
+			break;
+
+		case 28:
+			holdsprite.visible = false;
+			startBsprite.visible = false;
+			starsprite.visible = false;
+			nextsprite.visible = false;
+			streetsprite.visible = false;
+			drinksprite.visible = false;
+			carsprite.visible = false;
+			shadowsprite.visible = false;
+			couchsprite.visible = false;
+			keysprite.visible = false;
+			asprite.visible = false;
+			bsprite.visible = false;
+			csprite.visible = false;
+
+			text("Congratulations, you made it home safely… this time", 50, 50, 50);
+			break;
+
 	}
 
 
