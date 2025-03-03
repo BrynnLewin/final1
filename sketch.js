@@ -47,7 +47,7 @@ function preload() {
 	start = loadImage('assets/start.png');
 	startB = loadImage('assets/startb.png');
 	street = loadImage('assets/street.png');
-	star = loadImage('assets/star.png');
+	star = loadImage('assets/feet.png');
 	car = loadImage('assets/car.png');
 	couch = loadImage('assets/couch.png');
 	drink = loadImage('assets/drink.png');
@@ -89,8 +89,8 @@ function setup() {
 	startBsprite.collider = "kinematic";
 
 	starsprite = new Sprite();
-	starsprite.scale = .7;
-	starsprite.diameter = 10;
+	starsprite.scale = .3;
+	starsprite.diameter = 3;
 	starsprite.x = 300;
 	starsprite.y = 450;
 	starsprite.image = star;
@@ -255,7 +255,8 @@ function draw() {
 
 			text("After a night out with some friends, you decide to walk home from the club alone.", 50, 50, 50);
 			text("You must choose your actions wisely in order to make it home safely.", 50, 85, 50);
-			text("Click “a,b, and c” to make decisions and the up arrow key to move around.", 50, 150, 50);
+			text("Use the up and down arrows to walk home", 50, 120, 50);
+			text("Click the icons in order as they appear on the screan then click “a,b, or c” to make decisions.", 50, 150, 50);
 			text("Good luck surviving the walk home.", 50, 200, 50);
 			fill("white");
 			if (nextsprite.mouse.presses()) {
@@ -421,7 +422,7 @@ function draw() {
 			csprite.visible = false;
 			playsprite.visible = false;
 
-			text("They call you a liar and a tease, you keep walking home", 50, 50, 50);
+			text("They yell and call you a liar, you keep walking home", 50, 50, 50);
 
 			if (nextsprite.mouse.presses()) {
 				print("next is pressed.");
@@ -675,7 +676,7 @@ function draw() {
 			csprite.visible = false;
 			playsprite.visible = false;
 
-			text("GAME OVER, You just pepper sprayed an innocent old woman walking her dog behind you…", 50, 50, 50);
+			text("GAME OVER, You just pepper sprayed an innocent old man walking his dog behind you…", 50, 50, 50);
 
 			if (nextsprite.mouse.presses()) {
 				print("next is pressed.");
